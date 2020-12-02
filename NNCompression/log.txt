@@ -1,0 +1,475 @@
+initial_accuracy 38.22
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  663552 /  663552 (100.00%) | total_pruned =       0 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  884736 /  884736 (100.00%) | total_pruned =       0 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  589824 /  589824 (100.00%) | total_pruned =       0 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight = 1048576 / 1048576 (100.00%) | total_pruned =       0 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 16777216 / 16777216 (100.00%) | total_pruned =       0 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   40960 /   40960 (100.00%) | total_pruned =       0 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 20344650, pruned weight: 0, total: 20344650, Compression rate :       1.00x  (  0.00% pruned)
+accuracy_after_pruning 16.3
+conv1.weight         | nonzeros weight =     949 /   23232 (  4.08%) | total_pruned =   22283 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21457 /  307200 (  6.98%) | total_pruned =  285743 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   39287 /  663552 (  5.92%) | total_pruned =  624265 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   35894 /  884736 (  4.06%) | total_pruned =  848842 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   25461 /  589824 (  4.32%) | total_pruned =  564363 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   57886 / 1048576 (  5.52%) | total_pruned =  990690 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =  419882 / 16777216 (  2.50%) | total_pruned = 16357334 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =    2698 /   40960 (  6.59%) | total_pruned =   38262 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 612868, pruned weight: 19731782, total: 20344650, Compression rate :      33.20x  ( 96.99% pruned)
+conv1.weight         | nonzeros weight =     949 /   23232 (  4.08%) | total_pruned =   22283 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21457 /  307200 (  6.98%) | total_pruned =  285743 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   39287 /  663552 (  5.92%) | total_pruned =  624265 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   35894 /  884736 (  4.06%) | total_pruned =  848842 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   25461 /  589824 (  4.32%) | total_pruned =  564363 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   57886 / 1048576 (  5.52%) | total_pruned =  990690 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =  419882 / 16777216 (  2.50%) | total_pruned = 16357334 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =    2698 /   40960 (  6.59%) | total_pruned =   38262 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 612868, pruned weight: 19731782, total: 20344650, Compression rate :      33.20x  ( 96.99% pruned)
+accuracy_after_retraining 46.53
+accuracy_before_quantixation 46.53
+accuracy_after_quantixation 46.59
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 1767      52.59x   1.90% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                34045      36.09x   2.77% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208                83485      31.79x   3.15% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944                92276      38.35x   2.61% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                63293      37.28x   2.68% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1131566      71.92x   1.39%
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 1767      52.59x   1.90% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                34045      36.09x   2.77% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208                83485      31.79x   3.15% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944                92276      38.35x   2.61% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                63293      37.28x   2.68% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1131566      71.92x   1.39%
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2210      42.05x   2.38% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                67316      18.25x   5.48% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208               154824      17.14x   5.83% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               137484      25.74x   3.88% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                98972      23.84x   4.19% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1317506      61.77x   1.62%
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2210      42.05x   2.38% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                67316      18.25x   5.48% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208               154824      17.14x   5.83% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               137484      25.74x   3.88% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                98972      23.84x   4.19% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1317506      61.77x   1.62%
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2210      42.05x   2.38% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                67316      18.25x   5.48% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208               154824      17.14x   5.83% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               137484      25.74x   3.88% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                98972      23.84x   4.19% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1317506      61.77x   1.62%
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2210      42.05x   2.38% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                67316      18.25x   5.48% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208               154824      17.14x   5.83% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               137484      25.74x   3.88% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                98972      23.84x   4.19% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1317506      61.77x   1.62%
+accuracy_after_decoding 10.57
+accuracy_before_encoding 46.59
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2210      42.05x   2.38% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                67316      18.25x   5.48% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208               154824      17.14x   5.83% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               137484      25.74x   3.88% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                98972      23.84x   4.19% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               104924      39.97x   2.50%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               705916      95.07x   1.05%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8444      19.40x   5.15%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1317506      61.77x   1.62%
+accuracy_after_decoding 46.59
+initial_accuracy 59.06
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  663552 /  663552 (100.00%) | total_pruned =       0 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  884736 /  884736 (100.00%) | total_pruned =       0 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  589823 /  589824 (100.00%) | total_pruned =       1 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight = 1048576 / 1048576 (100.00%) | total_pruned =       0 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 16777183 / 16777216 (100.00%) | total_pruned =      33 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   40960 /   40960 (100.00%) | total_pruned =       0 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 20344616, pruned weight: 34, total: 20344650, Compression rate :       1.00x  (  0.00% pruned)
+accuracy_after_pruning 15.08
+conv1.weight         | nonzeros weight =    1355 /   23232 (  5.83%) | total_pruned =   21877 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21904 /  307200 (  7.13%) | total_pruned =  285296 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   29145 /  663552 (  4.39%) | total_pruned =  634407 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   44006 /  884736 (  4.97%) | total_pruned =  840730 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   25250 /  589824 (  4.28%) | total_pruned =  564574 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   26328 / 1048576 (  2.51%) | total_pruned = 1022248 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =   92822 / 16777216 (  0.55%) | total_pruned = 16684394 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =     837 /   40960 (  2.04%) | total_pruned =   40123 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 251001, pruned weight: 20093649, total: 20344650, Compression rate :      81.05x  ( 98.77% pruned)
+conv1.weight         | nonzeros weight =    1355 /   23232 (  5.83%) | total_pruned =   21877 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21904 /  307200 (  7.13%) | total_pruned =  285296 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   29145 /  663552 (  4.39%) | total_pruned =  634407 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   44006 /  884736 (  4.97%) | total_pruned =  840730 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   25250 /  589824 (  4.28%) | total_pruned =  564574 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   26328 / 1048576 (  2.51%) | total_pruned = 1022248 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =   92822 / 16777216 (  0.55%) | total_pruned = 16684394 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =     837 /   40960 (  2.04%) | total_pruned =   40123 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 251001, pruned weight: 20093649, total: 20344650, Compression rate :      81.05x  ( 98.77% pruned)
+accuracy_after_retraining 15.08
+accuracy_before_quantixation 15.08
+accuracy_after_quantixation 14.63
+accuracy_before_encoding 14.63
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2855      32.55x   3.07% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                56445      21.77x   4.59% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208                98181      27.03x   3.70% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               174104      20.33x   4.92% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296               103049      22.89x   4.37% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304                52184      80.38x   1.24%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               155501     431.57x   0.23%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 2485      65.93x   1.52%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600               682220     119.28x   0.84%
+accuracy_after_decoding 14.63
+initial_accuracy 59.06
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  663552 /  663552 (100.00%) | total_pruned =       0 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  884736 /  884736 (100.00%) | total_pruned =       0 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  589823 /  589824 (100.00%) | total_pruned =       1 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight = 1048576 / 1048576 (100.00%) | total_pruned =       0 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 16777183 / 16777216 (100.00%) | total_pruned =      33 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   40960 /   40960 (100.00%) | total_pruned =       0 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 20344616, pruned weight: 34, total: 20344650, Compression rate :       1.00x  (  0.00% pruned)
+accuracy_after_pruning 59.06
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  525922 /  663552 ( 79.26%) | total_pruned =  137630 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  697304 /  884736 ( 78.81%) | total_pruned =  187432 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  492589 /  589824 ( 83.51%) | total_pruned =   97235 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =  246239 / 1048576 ( 23.48%) | total_pruned =  802337 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 3157643 / 16777216 ( 18.82%) | total_pruned = 13619573 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   20705 /   40960 ( 50.55%) | total_pruned =   20255 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 5480188, pruned weight: 14864462, total: 20344650, Compression rate :       3.71x  ( 73.06% pruned)
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  525922 /  663552 ( 79.26%) | total_pruned =  137630 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  697304 /  884736 ( 78.81%) | total_pruned =  187432 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  492589 /  589824 ( 83.51%) | total_pruned =   97235 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =  246239 / 1048576 ( 23.48%) | total_pruned =  802337 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 3157643 / 16777216 ( 18.82%) | total_pruned = 13619573 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   20705 /   40960 ( 50.55%) | total_pruned =   20255 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 5480188, pruned weight: 14864462, total: 20344650, Compression rate :       3.71x  ( 73.06% pruned)
+accuracy_after_retraining 59.06
+accuracy_before_quantixation 59.06
+accuracy_after_quantixation 58.5
+accuracy_before_encoding 58.5
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                35493       2.62x  38.19% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800               678083       1.81x  55.18% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208              1514702       1.75x  57.07% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944              2070662       1.71x  58.51% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296              1381496       1.71x  58.56% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               423963       9.89x  10.11%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864              5156132      13.02x   7.68%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                50241       3.26x  30.66%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600             11348188       7.17x  13.94%
+initial_accuracy 37.26
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  663552 /  663552 (100.00%) | total_pruned =       0 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  884736 /  884736 (100.00%) | total_pruned =       0 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  589824 /  589824 (100.00%) | total_pruned =       0 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight = 1048576 / 1048576 (100.00%) | total_pruned =       0 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 16777216 / 16777216 (100.00%) | total_pruned =       0 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   40960 /   40960 (100.00%) | total_pruned =       0 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 20344650, pruned weight: 0, total: 20344650, Compression rate :       1.00x  (  0.00% pruned)
+accuracy_after_pruning 16.5
+conv1.weight         | nonzeros weight =     954 /   23232 (  4.11%) | total_pruned =   22278 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21826 /  307200 (  7.10%) | total_pruned =  285374 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   38102 /  663552 (  5.74%) | total_pruned =  625450 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   34670 /  884736 (  3.92%) | total_pruned =  850066 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   23798 /  589824 (  4.03%) | total_pruned =  566026 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   58007 / 1048576 (  5.53%) | total_pruned =  990569 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =  404616 / 16777216 (  2.41%) | total_pruned = 16372600 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =    2823 /   40960 (  6.89%) | total_pruned =   38137 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 594150, pruned weight: 19750500, total: 20344650, Compression rate :      34.24x  ( 97.08% pruned)
+accuracy_before_quantixation 59.06
+initial_accuracy 38.13
+conv1.weight         | nonzeros weight =   23232 /   23232 (100.00%) | total_pruned =       0 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =  307200 /  307200 (100.00%) | total_pruned =       0 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =  663552 /  663552 (100.00%) | total_pruned =       0 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =  884736 /  884736 (100.00%) | total_pruned =       0 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =  589824 /  589824 (100.00%) | total_pruned =       0 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight = 1048576 / 1048576 (100.00%) | total_pruned =       0 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight = 16777216 / 16777216 (100.00%) | total_pruned =       0 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =   40960 /   40960 (100.00%) | total_pruned =       0 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 20344650, pruned weight: 0, total: 20344650, Compression rate :       1.00x  (  0.00% pruned)
+accuracy_after_pruning 14.6
+conv1.weight         | nonzeros weight =     997 /   23232 (  4.29%) | total_pruned =   22235 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21785 /  307200 (  7.09%) | total_pruned =  285415 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   39842 /  663552 (  6.00%) | total_pruned =  623710 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   38892 /  884736 (  4.40%) | total_pruned =  845844 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   25446 /  589824 (  4.31%) | total_pruned =  564378 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   56322 / 1048576 (  5.37%) | total_pruned =  992254 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =  410181 / 16777216 (  2.44%) | total_pruned = 16367035 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =    2873 /   40960 (  7.01%) | total_pruned =   38087 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 605692, pruned weight: 19738958, total: 20344650, Compression rate :      33.59x  ( 97.02% pruned)
+conv1.weight         | nonzeros weight =     997 /   23232 (  4.29%) | total_pruned =   22235 | shape = (64, 3, 11, 11)
+conv1.bias           | nonzeros weight =      64 /      64 (100.00%) | total_pruned =       0 | shape = (64,)
+conv2.weight         | nonzeros weight =   21785 /  307200 (  7.09%) | total_pruned =  285415 | shape = (192, 64, 5, 5)
+conv2.bias           | nonzeros weight =     192 /     192 (100.00%) | total_pruned =       0 | shape = (192,)
+conv3.weight         | nonzeros weight =   39842 /  663552 (  6.00%) | total_pruned =  623710 | shape = (384, 192, 3, 3)
+conv3.bias           | nonzeros weight =     384 /     384 (100.00%) | total_pruned =       0 | shape = (384,)
+conv4.weight         | nonzeros weight =   38892 /  884736 (  4.40%) | total_pruned =  845844 | shape = (256, 384, 3, 3)
+conv4.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+conv5.weight         | nonzeros weight =   25446 /  589824 (  4.31%) | total_pruned =  564378 | shape = (256, 256, 3, 3)
+conv5.bias           | nonzeros weight =     256 /     256 (100.00%) | total_pruned =       0 | shape = (256,)
+fc1.weight           | nonzeros weight =   56322 / 1048576 (  5.37%) | total_pruned =  992254 | shape = (4096, 256)
+fc1.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc2.weight           | nonzeros weight =  410181 / 16777216 (  2.44%) | total_pruned = 16367035 | shape = (4096, 4096)
+fc2.bias             | nonzeros weight =    4096 /    4096 (100.00%) | total_pruned =       0 | shape = (4096,)
+fc3.weight           | nonzeros weight =    2873 /   40960 (  7.01%) | total_pruned =   38087 | shape = (10, 4096)
+fc3.bias             | nonzeros weight =      10 /      10 (100.00%) | total_pruned =       0 | shape = (10,)
+alive: 605692, pruned weight: 19738958, total: 20344650, Compression rate :      33.59x  ( 97.02% pruned)
+accuracy_after_retraining 47.24
+accuracy_before_quantixation 47.24
+accuracy_after_quantixation 47.31
+accuracy_before_encoding 47.31
+Layer           |       original bytes     compressed bytes improvement percent
+----------------------------------------------------------------------
+conv1.weight    |                92928                 2297      40.46x   2.47% (NEED TO BE IMPLEMENTED)
+conv1.bias      |                  256                  256       1.00x 100.00%
+conv2.weight    |              1228800                67525      18.20x   5.50% (NEED TO BE IMPLEMENTED)
+conv2.bias      |                  768                  768       1.00x 100.00%
+conv3.weight    |              2654208               156710      16.94x   5.90% (NEED TO BE IMPLEMENTED)
+conv3.bias      |                 1536                 1536       1.00x 100.00%
+conv4.weight    |              3538944               147121      24.05x   4.16% (NEED TO BE IMPLEMENTED)
+conv4.bias      |                 1024                 1024       1.00x 100.00%
+conv5.weight    |              2359296                96761      24.38x   4.10% (NEED TO BE IMPLEMENTED)
+conv5.bias      |                 1024                 1024       1.00x 100.00%
+fc1.weight      |              4194304               101575      41.29x   2.42%
+fc1.bias        |                16384                16384       1.00x 100.00%
+fc2.weight      |             67108864               691287      97.08x   1.03%
+fc2.bias        |                16384                16384       1.00x 100.00%
+fc3.weight      |               163840                 8954      18.30x   5.47%
+fc3.bias        |                   40                   40       1.00x 100.00%
+----------------------------------------------------------------------
+total           |             81378600              1309646      62.14x   1.61%
+accuracy_after_decoding 47.31
