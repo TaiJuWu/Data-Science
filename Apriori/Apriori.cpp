@@ -8,8 +8,12 @@
 #include <iomanip>
 #include <iterator>
 #include <time.h>
+#include <algorithm>
 
 using namespace std;
+
+float min_support = 0.2;
+float min_freq = 0;
 
 struct timespec Start, End, temp;
 double diff(struct timespec start, struct timespec end){
@@ -25,36 +29,16 @@ double diff(struct timespec start, struct timespec end){
     return time_used;
 }
 
-float min_support = 0.2;
-float min_freq = 0;
-
 int count_items(const vector<vector<int>> data, const set<int> item)
 {
-    set<int>::iterator iter;
     int count = 0;
-    for (int i = 0; i < data.size(); ++i)
-    {
-        // parallel
-        bool findAllItem = false; // 檢查是不是所有的item都在transcation當中
-        for (iter = item.begin(); iter != item.end(); ++iter)
-        {
-            bool find = false;
-            for (int j = 0; j < data[i].size(); ++j)
-            {
-                if (*iter == data[i][j]) // 表示找到了
-                {
-                    find = true;
-                    break;
-                }
-            }
-            if (!find)
-                break;
-            // cout << "crash here?" << endl;
-            if (iter == next(item.end(), -1) && find)
-                findAllItem = true;
-        }
-        if (findAllItem)
+    vector<int> v(item.size());
+    for(int i=0; i< data.size(); ++i){
+        vector<int>::iterator it = set_intersection(data[i].begin(), data[i].end(), item.begin(), item.end(), v.begin());
+        v.resize(it - v.begin());
+        if(v.size() == item.size()){
             ++count;
+        }
     }
     return count;
 }
@@ -94,22 +78,6 @@ void SplitString(const string &s, vector<int> &v, const string &c)
     }
 }
 
-void del_element(map<set<int>, int, mapComp> &items)
-{
-    vector<set<int>> del;
-    set<int>::iterator set_iter;
-
-    map<set<int>, int, mapComp>::iterator map_iter;
-
-    for (map_iter = items.begin(); map_iter != items.end(); map_iter++)
-    {
-        if (map_iter->second < min_freq)
-            del.push_back(map_iter->first);
-    }
-
-    for (vector<set<int>>::iterator del_iter = del.begin(); del_iter != del.end(); ++del_iter)
-        items.erase(*del_iter);
-}
 
 void myPrint(map<set<int>, int, mapComp> &items)
 {
@@ -145,7 +113,7 @@ int main(int argc, char *argv[])
     int lineCount = 0;
     vector<string> data;
 
-    // time_t startReadTime = time(NULL);
+    
     fstream file;
     file.open(fileName);
 
@@ -162,40 +130,50 @@ int main(int argc, char *argv[])
 
     // time_t read_end = time(NULL);
     // cout << "read time:" << int(read_end - startReadTime) << endl;
-    vector<vector<int>> transcation;
+
+    vector<vector<int>> transcations;
     for (int i = 0; i < lineCount; ++i)
     {
         vector<int> a;
-        transcation.push_back(a);
-        SplitString(data[i], transcation[i], ",");
+        transcations.push_back(a);
+        SplitString(data[i], transcations[i], ",");
+    }
+
+    for(int i=0; i<transcations.size(); ++i){
+        sort(transcations[i].begin(), transcations[i].end());
+    }
+
+    int max_item_num = -999;
+    for(int i=0; i<transcations.size(); ++i){
+        if(transcations[i][transcations[i].size()-1] > max_item_num){
+            max_item_num = transcations[i][transcations[i].size()-1];
+        }
     }
 
     min_freq = lineCount * min_support;
     cout << "min_freq: " << min_freq << endl;
+
     // print tanscation
     map<set<int>, int, mapComp> items;
     map<set<int>, int, mapComp>::iterator map_iter;
     // count all single items
-    for (int i = 0; i < transcation.size(); i++)
+    vector<int> counter(max_item_num+1, 0);
+    for (int i = 0; i < transcations.size(); i++)
     {
-        for (int j = 0; j < transcation[i].size(); j++)
+        for (int j = 0; j < transcations[i].size(); j++)
         {
-            set<int> tmp;
-            tmp.insert(transcation[i][j]);
-            map_iter = items.find(tmp);
-            // key is in item
-            if (map_iter != items.end())
-            {
-                map_iter->second += 1;
-            }
-            else
-            {
-                items[tmp] = 1;
-            }
+            counter[transcations[i][j]] += 1;
         }
     }
-    // 刪除小於min_support的元素
-    del_element(items);
+
+    // 只保留大於min_support的元素
+    for(int i=0; i<max_item_num+1; ++i){ // 這裡可以做些優化，說不定max_item #會小於999
+        if(counter[i] >= min_freq){
+            set<int> tmp;
+            tmp.insert(i);
+            items[tmp] = counter[i];
+        }
+    }
 
     bool flag = false; // 是否有加入新的item
     map<set<int>, int, mapComp> old_map = items;
@@ -205,27 +183,28 @@ int main(int argc, char *argv[])
     // time_t main_start = time(NULL);
     while(old_map.size() != 0)
     {
-        flag = false; // add new item to map or not
-
-        set<int> new_set;
-        int tmp[2];
-        map<set<int>, int, mapComp>::iterator map_iter;
-        map<set<int>, int, mapComp>::iterator map_iter2;
         // 對於old_map中每個元素暴力比較，看能不能merge
-        for (map_iter = old_map.begin(); map_iter != next(old_map.end(), -1); ++map_iter)
+        for(map<set<int>, int, mapComp>::iterator map_iter = old_map.begin(); map_iter != next(old_map.end(), -1); ++map_iter)
         {
-            for (map_iter2 = next(map_iter, 1); map_iter2 != old_map.end(); ++map_iter2)
+            for(map<set<int>, int, mapComp>::iterator map_iter2 = next(map_iter, 1); map_iter2 != old_map.end(); ++map_iter2)
             {
-                //檢查兩個set前n-1個元素是不是相同的，如果是相同則代表可以merge
-                tmp[0] = *(map_iter->first).rbegin();
-                tmp[1] = *(map_iter2->first).rbegin();
-                // cout << "tmp[0] " << tmp[0] << endl;
-                // cout << "tmp[1] " << tmp[1] << endl;
-
+                set<int> new_set;
                 set<int> set1Copy = map_iter->first;
                 set<int> set2Copy = map_iter2->first;
-                set1Copy.erase(tmp[0]);
-                set2Copy.erase(tmp[1]);
+                //檢查兩個set前n-1個元素是不是相同的，如果是相同則代表可以merge
+                set<int>::iterator iter_temp[2];
+                iter_temp[0] = next(set1Copy.end(), -1);
+                iter_temp[1] = next(set2Copy.end(), -1);
+                int tmp[2];
+                tmp[0] = *iter_temp[0];
+                tmp[1] = *iter_temp[1];
+                // PrintSet(set1Copy);
+                // PrintSet(set2Copy);
+                // cout << "tmp[0] " << tmp[0] << endl;
+                // cout << "tmp[1] " << tmp[1] << endl;
+                // 刪除ItemSet最後一個元素
+                set1Copy.erase(iter_temp[0]);
+                set2Copy.erase(iter_temp[1]);
 
                 bool compare_flag = (set1Copy == set2Copy);
                 // 兩個set相同，且他們組合成的新Set的數目會大於min_support就加到map當中
@@ -239,9 +218,10 @@ int main(int argc, char *argv[])
                     // cout << "-------------" << endl;
                     // PrintSet(new_set);
                     // cout << "-------------" << endl;
-                    int count = count_items(transcation, new_set); // 這個function沒經過測試
+                    int count = count_items(transcations, new_set); // 這個function沒經過測試
                     if (count >= min_freq)
                     {
+                        items[new_set] = count; // 大於min_support的放入items當中
                         new_map[new_set] = count;
                         flag = true;
                         // myPrint(items);
@@ -249,16 +229,10 @@ int main(int argc, char *argv[])
                 }
             }
         }
-        // 將創造出來的新item放到item當中
-        for (map_iter = new_map.begin(); map_iter != new_map.end(); ++map_iter)
-        {
-            items[map_iter->first] = map_iter->second;
-        }
         old_map = new_map;
         new_map.clear();
     }
-    // time_t main_end = time(NULL);
-    // cout << "calcuation time: " << int(main_end - main_start) << endl;
+    
 
     // 寫入檔案
     // time_t write_start = time(NULL);
