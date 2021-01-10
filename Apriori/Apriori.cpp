@@ -11,6 +11,20 @@
 
 using namespace std;
 
+struct timespec Start, End, temp;
+double diff(struct timespec start, struct timespec end){
+    if((end.tv_nsec - start.tv_nsec) < 0){
+        temp.tv_sec = end.tv_sec - start.tv_sec - 1;
+        temp.tv_nsec = 1000000000 + end.tv_nsec - start.tv_nsec;
+    }
+    else{
+        temp.tv_sec = end.tv_sec - start.tv_sec;
+        temp.tv_nsec = end.tv_nsec - start.tv_nsec;
+    }
+    double time_used = temp.tv_sec + (double) temp.tv_nsec / 1000000000.0;
+    return time_used;
+}
+
 float min_support = 0.2;
 float min_freq = 0;
 
@@ -124,7 +138,7 @@ void PrintSet(const set<int> a)
 
 int main(int argc, char *argv[])
 {
-    time_t start = time(NULL);
+    clock_gettime(CLOCK_MONOTONIC, &Start);
     min_support = atof(argv[1]);
     string fileName = argv[2];
     char buffer[5000];
@@ -148,7 +162,6 @@ int main(int argc, char *argv[])
 
     // time_t read_end = time(NULL);
     // cout << "read time:" << int(read_end - startReadTime) << endl;
-
     vector<vector<int>> transcation;
     for (int i = 0; i < lineCount; ++i)
     {
@@ -159,7 +172,6 @@ int main(int argc, char *argv[])
 
     min_freq = lineCount * min_support;
     cout << "min_freq: " << min_freq << endl;
-
     // print tanscation
     map<set<int>, int, mapComp> items;
     map<set<int>, int, mapComp>::iterator map_iter;
@@ -182,7 +194,6 @@ int main(int argc, char *argv[])
             }
         }
     }
-
     // 刪除小於min_support的元素
     del_element(items);
 
@@ -192,7 +203,7 @@ int main(int argc, char *argv[])
 
     // main function
     // time_t main_start = time(NULL);
-    do
+    while(old_map.size() != 0)
     {
         flag = false; // add new item to map or not
 
@@ -245,7 +256,7 @@ int main(int argc, char *argv[])
         }
         old_map = new_map;
         new_map.clear();
-    } while (flag);
+    }
     // time_t main_end = time(NULL);
     // cout << "calcuation time: " << int(main_end - main_start) << endl;
 
@@ -274,8 +285,8 @@ int main(int argc, char *argv[])
 
     fs.close();
 
-    time_t end = time(NULL);
-    cout << "run time: " << (end - start) << endl;
+    clock_gettime(CLOCK_MONOTONIC, &End);
+    cout << "thread run time: " << diff(Start, End) << endl;
 
     // myPrint(items);
 }
