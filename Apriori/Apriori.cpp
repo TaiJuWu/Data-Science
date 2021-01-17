@@ -72,7 +72,7 @@ void printItems(map<set<int>, int, mapComp> &items)
             cout << *set_iter << ",";
         }
         cout << "}, count:";
-        cout << map_iter->second << endl;
+        cout << (float)(map_iter->second)/transcations.size() << endl;
     }
 }
 
@@ -105,15 +105,20 @@ void printVec(vector<int> v){
     cout << endl;
 }
 
+struct timespec s2, e2;
+double q=0;
 int count_items(unordered_map<int, set<int>> hash, const set<int> item)
 {
 // cout << "enter " << endl; 
     vector<int> v(transcations.size(), -1);
 // printVec(v);
+clock_gettime(CLOCK_MONOTONIC, &s2);
     set<int>::iterator first = item.begin();
     set<int>::iterator second = next(item.begin(), 1);
     vector<int>::iterator it = set_intersection(hash[*first].begin(), hash[*first].end(), hash[*second].begin(), hash[*second].end(), v.begin());
     v.resize(it - v.begin());
+clock_gettime(CLOCK_MONOTONIC, &e2);
+q+=diff(s2,e2);
     for(set<int>::iterator it = next(item.begin(), 2); it != item.end(); ++it){
         vector<int> tmp(v.size());
         vector<int>::iterator tmp_it = set_intersection(v.begin(), v.end(), hash[(*it)].begin(), hash[(*it)].end(), tmp.begin());
@@ -235,11 +240,12 @@ int main(int argc, char *argv[])
 
     map<set<int>, int, mapComp> old_map = items;
     map<set<int>, int, mapComp> new_map;
-
+int cal_count = 0;
 struct timespec s, e;
 double d=0;
     // main function
     // time_t main_start = time(NULL);
+int c=1;
     while(old_map.size() != 0)
     {
         // 對於old_map中每個元素暴力比較，看能不能merge
@@ -270,6 +276,7 @@ double d=0;
                 if (compare_flag)
                 {
                     new_set.clear();
+                
                     new_set = set1Copy;
                     new_set.insert(tmp[0]);
                     new_set.insert(tmp[1]);
@@ -278,7 +285,10 @@ double d=0;
                     // PrintSet(new_set);
                     // cout << "-------------" << endl;
     clock_gettime(CLOCK_MONOTONIC, &s);
+    cal_count += 1;
+    PrintSet(new_set);
                     int count = count_items(item_to_lines, new_set); // 這個function沒經過測試
+    cout << " " << (float)count/transcations.size() << endl;
     clock_gettime(CLOCK_MONOTONIC, &e);
     d += diff(s,e);
                     if (count >= min_freq)
@@ -292,6 +302,10 @@ double d=0;
         }
         old_map = new_map;
         new_map.clear();
+    // if(c == 1){
+    //         printItems(old_map);
+    //     }
+    c++;
     }
     
 
@@ -321,7 +335,9 @@ double d=0;
     fs.close();
 
     clock_gettime(CLOCK_MONOTONIC, &End);
-    cout << "thread run time: " << diff(Start, End) << endl;
-    cout << "compute time:" << d << endl;
+    cout << "C++ thread run time: " << diff(Start, End) << endl;
+    cout << "C++ compute time:" << d << endl;
+    cout << "c++ cal counter: "<< cal_count << endl;
+    cout << "start intersection time:" << q<<endl;
     // printItems(items);
 }
